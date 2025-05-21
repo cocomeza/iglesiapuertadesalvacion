@@ -1,0 +1,324 @@
+@import url('./styles.css'); /* Importa los estilos generales */
+
+:root {
+  --primary-color: #b57614;
+  --primary-light: #d9b655;
+  --primary-dark: #7d5214;
+  --secondary-color: #2b4e89;
+  --secondary-light: #5a7cb8;
+  --secondary-dark: #1a3158;
+  --text-light: #f8f9fa;
+  --text-dark: #343a40;
+  --bg-light: #f8f5f0;
+  --bg-dark: #343a40;
+  --accent-color: #dc3545;
+  --transition-speed: 0.3s;
+  --card-bg: #ffffff;
+  --card-border: rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--bg-light);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+  width: 100%;
+  padding-top: 80px; /* espacio para navbar fija */
+
+  /* Flexbox para sticky footer */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-wrapper {
+  flex: 1 0 auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1 {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.lead {
+  color: var(--secondary-color);
+}
+
+
+.navbar {
+  background-color: rgba(52, 58, 64, 0.95); /* Gris oscuro semi-transparente */
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar-brand {
+  color: var(--primary-light) !important;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.nav-link {
+  color: white !important;
+  padding: 0.5rem 1rem;
+  transition: color var(--transition-speed) ease;
+}
+
+.nav-link:hover {
+  color: var(--primary-light) !important;
+}
+
+#resultado {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+  font-family: 'Georgia', serif;
+  font-size: 1.2rem;
+  line-height: 2;
+  animation: fadeIn 0.5s ease-in;
+  margin-top: 1rem;
+  padding: 1.5rem;
+  word-wrap: break-word;
+}
+
+#resultado h3 {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+#resultado p {
+  margin-bottom: 1.25rem;
+  text-align: justify;
+}
+
+#resultado strong {
+  color: var(--primary-color);
+  margin-right: 0.4rem;
+}
+
+.versiculo {
+  margin-bottom: 0.8em;
+  padding-left: 2.2em;
+  position: relative;
+  font-size: 1em;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: default;
+}
+
+.versiculo-numero {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 0.95em;
+  opacity: 0.8;
+  user-select: none;
+  cursor: help;
+}
+
+/* ========================
+   Modo nocturno
+======================== */
+body.modo-nocturno {
+  background: #181818;
+  color: #f5f5f5;
+}
+
+body.modo-nocturno #resultado {
+  background: #232323;
+  color: #f5f5f5;
+}
+
+body.modo-nocturno .versiculo-numero {
+  color: #ffe082;
+}
+
+/* ========================
+   Barra de controles flotante debajo del título
+======================== */
+.barra-controles {
+  position: sticky;
+  top: 80px; /* debajo del navbar fijo */
+  z-index: 1020;
+  background: rgba(255,255,255,0.95);
+  border-radius: 1rem; /* más pequeño para compactar */
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  margin-bottom: 0.5rem; /* menos espacio */
+  margin-top: 0.2rem;    /* menos espacio */
+  padding: 0.2rem 0.5rem; /* padding mínimo */
+  width: fit-content;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.3rem; /* menos separación entre botones */
+  align-items: center;
+}
+
+body.modo-nocturno .barra-controles {
+  background: rgba(34,34,34,0.97);
+}
+
+.controles-fuente button,
+.modo-toggle {
+  transition: box-shadow 0.2s;
+}
+
+.modo-toggle:focus,
+.controles-fuente button:focus {
+  box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+#btnModo {
+  width: 36px;       
+  height: 36px;      
+  font-size: 1.1rem; 
+  padding: 0;        
+}
+
+.card {
+  margin-bottom: 1.5rem;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition-speed) ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.footer {
+  background-color: var(--bg-dark);
+  color: white;
+  padding: 2rem 1rem;
+  margin-bottom: 0;
+
+  /* Para sticky footer */
+  flex-shrink: 0;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-icons a img {
+  width: 32px;
+  height: 32px;
+  transition: transform var(--transition-speed) ease;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem;
+  }
+
+  #resultado {
+    font-size: 1.1rem;
+    padding: 1.25rem;
+    line-height: 2;
+  }
+
+  .form-select {
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .card {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #resultado {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  #resultado h4 {
+    font-size: 1.2rem;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .barra-controles {
+    flex-direction: row; /* mantiene los botones en línea */
+    align-items: center;
+    gap: 0.2rem;
+    left: 0;
+    transform: none;
+    width: 100%;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    padding: 0.15rem 0.2rem; /* padding para ver más chico en el celular */
+    border-radius: 0.6rem;
+  }
+  .controles-fuente {
+    justify-content: flex-end;
+  }
+  .controles-fuente button,
+  .modo-toggle {
+    font-size: 1rem;
+    padding: 0.2rem 0.5rem;
+  }
+}
+
+

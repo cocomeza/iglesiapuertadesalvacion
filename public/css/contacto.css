@@ -1,0 +1,82 @@
+@import url('./styles.css'); /* Importa los estilos generales */
+
+.contact-page .hero-image {
+    height: 50vh;
+}
+
+.contact-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.contact-header {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 30px;
+    position: relative;
+}
+
+.contact-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg"><path d="M0,0v100h1000V0C666.7,66.7,333.3,66.7,0,0z" fill="white"/></svg>') no-repeat center bottom;
+    background-size: cover;
+}
+
+.contact-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--primary-light);
+}
+
+.contact-info a {
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: var(--primary-dark);
+    text-decoration: none;
+}
+
+.staff-section .card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.staff-section .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.staff-img {
+    height: 250px;
+    object-fit: cover;
+}
+
+.staff-social a {
+    color: var(--secondary-color);
+    margin: 0 8px;
+    transition: all 0.3s ease;
+}
+
+.staff-social a:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}

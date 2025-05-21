@@ -1,0 +1,84 @@
+@import url('./styles.css'); /* Importa los estilos generales */
+
+.galeria {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+/* Contenedor de cada imagen */
+.galeria-item {
+    background: var(--bg-light, #f8f9fa);
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(43, 78, 137, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    max-width: 100%; /* Permite que el contenedor crezca */
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.galeria-item:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(181, 118, 20, 0.18);
+    border: 2px solid var(--primary-color, #b57614);
+}
+
+/* Imagen dentro de la tarjeta */
+.galeria-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transition: opacity 0.3s ease;
+    border-radius: 1rem;
+}
+
+.galeria-item:hover .galeria-img {
+    opacity: 0.93;
+    filter: brightness(0.98) saturate(1.1);
+}
+
+/* Pie de foto opcional */
+.galeria-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(43,78,137,0.85) 60%, transparent);
+    color: var(--text-light, #fff);
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.galeria-item:hover .galeria-caption {
+    opacity: 1;
+}
+
+/* Responsive: una imagen por fila en celulares */
+@media (max-width: 576px) {
+    .galeria {
+        gap: 1rem;
+    }
+    .galeria-item {
+        max-width: 100%;
+        aspect-ratio: 4 / 3;
+    }
+    .galeria-caption {
+        font-size: 0.95rem;
+        padding: 0.5rem 0.75rem;
+    }
+}
