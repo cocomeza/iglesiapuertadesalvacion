@@ -1,0 +1,51 @@
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.galeria-item {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-in-out;
+  background: white;
+}
+
+.galeria-item:hover {
+  transform: scale(1.03);
+}
+
+.galeria-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+/* 📱 Móviles */
+@media (max-width: 600px) {
+  .galeria-item {
+    max-width: 280px;
+  }
+
+  .galeria-img {
+    aspect-ratio: 3 / 2;
+  }
+}
+
+/* 🖥️ Pantallas grandes */
+@media (min-width: 1024px) {
+  .galeria-item {
+    max-width: 400px;
+  }
+
+  .galeria-img {
+    aspect-ratio: 16 / 9;
+  }
+}
