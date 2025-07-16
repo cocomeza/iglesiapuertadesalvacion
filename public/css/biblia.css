@@ -352,6 +352,13 @@ body, .contenido-biblia {
   font-weight: 500;
   color: #222;
   margin-bottom: 0.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+.biblia-card .form-select {
+  text-align: center;
+  text-align-last: center;
 }
 
 .biblia-card .form-select,
@@ -402,12 +409,40 @@ body, .contenido-biblia {
 /* Responsive */
 @media (max-width: 600px) {
   .biblia-card {
-    padding: 1.2rem 0.5rem;
+    padding: 1.1rem 0.3rem;
+    max-width: 98vw;
   }
   .biblia-card h1, .biblia-card h2 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+  }
+  .barra-controles, .accesibilidad {
+    flex-direction: row !important;
+    gap: 0.5rem !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  .btn, .btn-accesibilidad, .btn-sm {
+    font-size: 0.98rem !important;
+    padding: 0.4rem 0.9rem !important;
+    min-width: 38px;
+    min-height: 38px;
+    border-radius: 0.7rem !important;
+  }
+  .form-select, .form-control {
+    font-size: 1rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 0.7rem;
   }
 }
+
+/* Elimino posibles estilos de input/ovalo vertical sobrante */
+.biblia-card input[type="text"]:empty, .biblia-card input:empty {
+  display: none !important;
+}
+.biblia-card input[style*="height: 120px"], .biblia-card input[style*="height:120px"] {
+  display: none !important;
+}
+
 
 
 
