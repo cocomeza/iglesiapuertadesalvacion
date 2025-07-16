@@ -321,6 +321,17 @@ body.modo-nocturno .barra-controles {
   }
 }
 
+@media (max-width: 991px) {
+  .navbar-collapse.show ~ .main-wrapper .barra-controles,
+  .navbar-collapse.show + .main-wrapper .barra-controles,
+  .navbar-collapse.show ~ main .barra-controles {
+    display: none !important;
+  }
+  .barra-controles {
+    z-index: 1;
+  }
+}
+
 /* Fondo general suave */
 body, .contenido-biblia {
   background: #f7f8fa !important;
@@ -442,7 +453,6 @@ body, .contenido-biblia {
 .biblia-card input[style*="height: 120px"], .biblia-card input[style*="height:120px"] {
   display: none !important;
 }
-
 
 
 
