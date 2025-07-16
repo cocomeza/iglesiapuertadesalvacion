@@ -1,0 +1,52 @@
+@import url('./styles.css');
+
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.evento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.evento img {
+    max-width: 350px;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.evento-info {
+    text-align: center;
+}
+
+.evento-info h2, .card-title {
+    color: var(--secondary-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.evento-info p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 1rem;
+    }
+    .evento img {
+        max-width: 100%;
+    }
+    .evento-info h2, .card-title {
+        font-size: 2rem;
+        text-align: center;
+    }
+} 
