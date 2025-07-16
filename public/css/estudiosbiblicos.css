@@ -432,6 +432,17 @@ main.container td {
   }
 }
 
+@media (max-width: 991px) {
+  .navbar-nav {
+    text-align: center;
+    width: 100%;
+  }
+  .navbar-nav .nav-link {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
 @media (max-width: 576px) {
   #resultado {
     font-size: 1rem;
