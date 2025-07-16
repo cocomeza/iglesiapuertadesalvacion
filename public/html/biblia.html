@@ -47,29 +47,31 @@
   <!-- Contenido principal envuelto para sticky footer -->
   <div class="main-wrapper">
     <main class="container py-4 contenido-biblia">
-      <h1 class="text-center mb-4">Biblia Reina Valera 1960 - Por Autor</h1>
+      <div class="biblia-card">
+        <h1 class="text-center mb-4">Biblia Reina Valera 1960 - Por Autor</h1>
 
-      <!-- Barra de controles flotante debajo del título y arriba del select -->
-      <div class="barra-controles">
-        <div class="controles-fuente">
-          <button class="btn btn-sm btn-outline-secondary" id="disminuir-fuente" title="Reducir letra">A-</button>
-          <button class="btn btn-sm btn-outline-secondary" id="aumentar-fuente" title="Aumentar letra">A+</button>
+        <!-- Barra de controles flotante debajo del título y arriba del select -->
+        <div class="barra-controles">
+          <div class="controles-fuente">
+            <button class="btn btn-sm btn-outline-secondary" id="disminuir-fuente" title="Reducir letra">A-</button>
+            <button class="btn btn-sm btn-outline-secondary" id="aumentar-fuente" title="Aumentar letra">A+</button>
+          </div>
+          <button class="modo-toggle btn btn-dark rounded-circle shadow" id="btnModo" title="Modo nocturno">
+            <i class="fas fa-moon"></i>
+          </button>
         </div>
-        <button class="modo-toggle btn btn-dark rounded-circle shadow" id="btnModo" title="Modo nocturno">
-          <i class="fas fa-moon"></i>
-        </button>
-      </div>
 
-      <div class="mb-3">
-        <label for="libro" class="form-label">Selecciona un libro</label>
-        <select id="libro" class="form-select">
-          <option value="" disabled selected>Elige un autor/libro</option>
-          <!-- Opciones cargadas dinámicamente -->
-        </select>
-      </div>
+        <div class="mb-3">
+          <label for="libro" class="form-label">Selecciona un libro</label>
+          <select id="libro" class="form-select">
+            <option value="" disabled selected>Elige un autor/libro</option>
+            <!-- Opciones cargadas dinámicamente -->
+          </select>
+        </div>
 
-      <div id="resultado" class="p-4">
-        <!-- aca se muestra el contenido del libro seleccionado -->
+        <div id="resultado" class="p-4">
+          <!-- aca se muestra el contenido del libro seleccionado -->
+        </div>
       </div>
     </main>
   </div>
@@ -102,3 +104,4 @@
 </body>
 
 </html>
+
