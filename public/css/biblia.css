@@ -321,4 +321,93 @@ body.modo-nocturno .barra-controles {
   }
 }
 
+/* Fondo general suave */
+body, .contenido-biblia {
+  background: #f7f8fa !important;
+}
+
+/* Tarjeta central */
+.biblia-card {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+  padding: 2.5rem 2rem;
+  max-width: 700px;
+  margin: 2.5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Título */
+.biblia-card h1, .biblia-card h2 {
+  color: #2563eb;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+/* Selector y controles */
+.biblia-card .form-label {
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.biblia-card .form-select,
+.biblia-card .form-control {
+  border-radius: 0.8rem;
+  font-size: 1.1rem;
+  padding: 0.7rem 1.2rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border: 1.5px solid #e5e7eb;
+}
+
+.biblia-card .form-select:focus,
+.biblia-card .form-control:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px #2563eb22;
+}
+
+.biblia-card .btn {
+  border-radius: 0.8rem;
+  font-weight: 600;
+  font-size: 1.08rem;
+  padding: 0.6rem 1.5rem;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+  transition: background 0.18s, color 0.18s;
+}
+
+.biblia-card .btn:hover, .biblia-card .btn:focus {
+  background: #1742a0;
+  color: #ffd700;
+}
+
+/* Caja de resultados */
+#resultado {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  font-size: 1.13rem;
+  color: #222;
+  margin-top: 1.5rem;
+  padding: 1.5rem 1.2rem;
+  min-height: 120px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .biblia-card {
+    padding: 1.2rem 0.5rem;
+  }
+  .biblia-card h1, .biblia-card h2 {
+    font-size: 1.2rem;
+  }
+}
+
+
 
